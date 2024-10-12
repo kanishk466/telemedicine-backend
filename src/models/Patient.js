@@ -6,6 +6,8 @@ const PatientSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   age: Number,
+  gender :String,
+  phoneNumber:Number,
   medicalHistory: [String],
 });
 

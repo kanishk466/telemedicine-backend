@@ -19,6 +19,7 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 // Routes
+app.send('/' , "Welcome to Telemedicine")
 app.use('/api/v1/appointments', appointmentRoutes);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/doctor' , doctorRoute);

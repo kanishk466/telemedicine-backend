@@ -24,10 +24,10 @@ app.use('/' ,function (req, res) {
   res.send('Welcome to telemedicine')
  
 })
-app.use('/api/v1/appointments', appointmentRoutes);
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/doctor' , doctorRoute);
-app.use('/api/v1/patient' , pateintRoute);
+app.use('/appointments', appointmentRoutes);
+app.use('/auth', authRoutes);
+app.use('/doctor' , doctorRoute);
+app.use('/patient' , pateintRoute);
 
 // Server listening
 const PORT = process.env.PORT || 5000;

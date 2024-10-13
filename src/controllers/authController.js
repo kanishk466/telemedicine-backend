@@ -30,7 +30,7 @@ export const registerDoctor = async (req, res) => {
 
 // Register Patient
 export const registerPatient = async (req, res) => {
-  const { name, email, password, age } = req.body;
+  const { name, email, password, age ,gender , phoneNumber} = req.body;
   try {
     let patient = await Patient.findOne({ email });
     if (patient) return res.status(400).json({ msg: 'Patient already exists' });

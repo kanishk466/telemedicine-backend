@@ -6,7 +6,13 @@ import appointmentRoutes from './src/routes/appointmentRoutes.js';
 import doctorRoute from "./src/routes/doctor.route.js"
 import pateintRoute from "./src/routes/patient.route.js"
 import cors from "cors"
-// Initialize environment varia/v1bles
+
+import  swaggerUi from "swagger-ui-express"
+
+
+import  swaggerJso from "./swagger-output.json" assert { type: 'json' };
+
+
 dotenv.config();
 
 // Initialize express app
@@ -19,15 +25,18 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 // Routes
-app.use('/' ,function (req, res) {
-   // false
-  res.send('Welcome to telemedicine')
- 
-})
+
+
+
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerJso));
+
+
 app.use('/api/v1/appointments', appointmentRoutes);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/doctor' , doctorRoute);
 app.use('/api/v1/patient' , pateintRoute);
+
+
 
 // Server listening
 const PORT = process.env.PORT || 5000;

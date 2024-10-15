@@ -32,10 +32,7 @@ app.use(cors());
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerJso));
 
 
-app.use('/api/v1/appointments', appointmentRoutes);
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/doctor' , doctorRoute);
-app.use('/api/v1/patient' , pateintRoute);
+
 
 app.use('/appointments', appointmentRoutes);
 app.use('/auth', authRoutes);

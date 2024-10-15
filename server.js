@@ -29,7 +29,7 @@ app.use(cors());
 
 
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerJso));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJso));
 
 
 

@@ -26,6 +26,7 @@ app.use(express.json());
 app.use(cors());
 // Routes
 
+<<<<<<< HEAD
 
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerJso));
@@ -35,6 +36,12 @@ app.use('/api/v1/appointments', appointmentRoutes);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/doctor' , doctorRoute);
 app.use('/api/v1/patient' , pateintRoute);
+=======
+app.use('/appointments', appointmentRoutes);
+app.use('/auth', authRoutes);
+app.use('/doctor' , doctorRoute);
+app.use('/patient' , pateintRoute);
+>>>>>>> 1921bc40fde7654919ad72f6fb0a89ee53cea66f
 
 
 
